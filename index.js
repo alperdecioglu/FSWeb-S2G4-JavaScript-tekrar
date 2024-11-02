@@ -122,7 +122,7 @@ sayilar.forEach(sayi => {
 // 3c çözümü:
 
 ucebolunenlerintoplami = ucetambolunenler.reduce((toplam, sayi) => toplam + sayi, 0);
-
+ 
 
 // 3d çözümü
 
