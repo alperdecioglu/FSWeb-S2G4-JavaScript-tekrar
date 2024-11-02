@@ -148,6 +148,7 @@ for (let sayi in sayac) {
 
 console.log("Tekrar Eden Sayılar:", tekraredensayilar);
 
+
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
 function sa() {
