@@ -49,10 +49,11 @@ function KareninAlani(kenaruzunlugu) {
 	3. Çemberin çevresi hesaplanacaktır (💡 İPUCU: Çemberin çevresi = 2 * pi * yarıçap)
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
-
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(yaricap) {
+  const cevresi = 2 * pi * yaricap;
+  return cevresi;
 }
+console.log(CemberinCevresi(5))
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -64,9 +65,11 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(yaricap, pi) {
+  const alan = pi * Math.pow(yaricap, 2);
+  return alan;
 }
+console.log(CemberinAlani(15, 3.14159))
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -99,27 +102,51 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+enbuyuk = sayilar[0];
+enkucuk = sayilar[0];
+
+for (let i = 1; i < sayilar.length; i++) {
+  if (sayilar[i] > enbuyuk) enbuyuk = sayilar[i];
+  if (sayilar[i] < enkucuk) enkucuk = sayilar[i];
+}
 
 // 3b çözümü:
 
-/* kodlar buraya */
+ucetambolunenler = [];
+sayilar.forEach(sayi => {
+  if (sayi % 3 === 0) {
+    ucetambolunenler.push(sayi);
+  }
+});
 
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce((toplam, sayi) => toplam + sayi, 0);
+
 
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter(sayi => sayi < 500);
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = [...besyuzdenkucuksayilar].sort((a, b) => a - b);
 
 // 3f çözümü
 
-/* kodlar buraya */
+const sayac = {};
+sayilar.forEach(sayi => {
+  sayac[sayi] = (sayac[sayi] || 0) + 1;
+});
+
+tekraredensayilar = [];
+for (let sayi in sayac) {
+  if (sayac[sayi] > 1) {
+    tekraredensayilar.push(`${sayi} sayısı ${sayac[sayi]} kere tekrar edilmiştir`);
+  }
+}
+
+console.log("Tekrar Eden Sayılar:", tekraredensayilar);
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
